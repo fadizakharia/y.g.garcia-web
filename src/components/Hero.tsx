@@ -138,35 +138,3 @@ export default function Hero() {
     </div>
   );
 }
-
-/*
-./pages/_app.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 28:9  Warning: Do not include stylesheets manually. See: https://nextjs.org/docs/messages/no-css-tags.  @next/next/no-css-tags
-[y-g-garcia-web] [2021-09-25 12:43:42] 29:9  Warning: Do not include stylesheets manually. See: https://nextjs.org/docs/messages/no-css-tags.  @next/next/no-css-tags
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./pages/about.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 25:18  Error: React Hook "useStyles" is called in function "about" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter.  react-hooks/rules-of-hooks
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./pages/books/[id].tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 84:13  Error: Missing "key" prop for element in iterator  react/jsx-key
-[y-g-garcia-web] [2021-09-25 12:43:42] 115:23  Warning: Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./src/components/Books.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 11:16  Error: Missing "key" prop for element in iterator  react/jsx-key
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./src/components/Hero.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 110:20  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
-[y-g-garcia-web] [2021-09-25 12:43:42] 113:77  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-[y-g-garcia-web] [2021-09-25 12:43:42] 114:34  Error: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
-[y-g-garcia-web] [2021-09-25 12:43:42] 119:19  Warning: Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./src/components/NavLink.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 97:5  Warning: passHref is missing. See https://nextjs.org/docs/messages/link-passhref  @next/next/link-passhref
-[y-g-garcia-web] [2021-09-25 12:43:42] 104:7  Warning: passHref is missing. See https://nextjs.org/docs/messages/link-passhref  @next/next/link-passhref
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./src/components/Navbar.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 43:11  Warning: passHref is missing. See https://nextjs.org/docs/messages/link-passhref  @next/next/link-passhref
-[y-g-garcia-web] [2021-09-25 12:43:42] 
-[y-g-garcia-web] [2021-09-25 12:43:42] ./src/components/PotatoPlaceholder.tsx
-[y-g-garcia-web] [2021-09-25 12:43:42] 50:33  Error: `'` can be escaped with `
-*/
