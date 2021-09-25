@@ -11,6 +11,7 @@ export const getStaticPaths = async () => {
   const books = data.getBooks.Books;
   const paths = books.map((book) => {
     return {
+      ket: book.id,
       params: { id: book.id },
     };
   });

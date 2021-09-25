@@ -47,8 +47,9 @@ const PotatoPlaceholder = () => {
   return (
     <div>
       <div className={styles.bubble}>
-        These **** Potatos haven't implemented this page yet!? <br /> *puffs on
-        cigarette* <br /> Someone get me a bourbon before i kill someone.
+        These **** Potatos haven&apos;t implemented this page yet!? <br />{" "}
+        *puffs on cigarette* <br /> Someone get me a bourbon before i kill
+        someone.
       </div>
       <div className={styles.imageWrapper}>
         <Image
