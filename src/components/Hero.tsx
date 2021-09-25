@@ -7,6 +7,7 @@ import {
   Button,
 } from "@material-ui/core";
 import React from "react";
+import Image from "next/image";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     HeroWrapper: {
@@ -53,9 +54,6 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: "5vh auto 30px auto",
     },
     heroImage: {
-      width: "270px",
-      height: "290px",
-
       overflow: "hidden",
       boxSizing: "content-box",
     },
@@ -89,18 +87,17 @@ export default function Hero() {
   return (
     <div className={styles.HeroWrapper}>
       <div className={styles.Hero}>
-        {/* <img
-          className={styles.heroBackgroundOverlay}
-          src="./assets/evil-lg.png"
-        /> */}
         <Grid container>
           <Grid item xs={12}>
             <div className={styles.heroImageContainer}>
-              <img
-                className={styles.heroImage}
-                src="./assets/evil-sm.png"
-                alt="Y.G garcia's face"
-              />
+              <div className={styles.heroImage}>
+                <Image
+                  width="270px"
+                  height="290px"
+                  src="./assets/evil-sm.png"
+                  alt="Lord banrek"
+                />
+              </div>
             </div>
             <Typography
               className={styles.title}
@@ -117,7 +114,7 @@ export default function Hero() {
             <div className={styles.patreonCTAContainer}>
               <Button
                 startIcon={
-                  <img
+                  <Image
                     width="20px"
                     height="20px"
                     src="./assets/Digital-Patreon-Logo_Black.png"

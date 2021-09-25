@@ -5,6 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 import SlideShow from "../../src/components/SlideShow";
 import { Box, Chip, Divider, Typography } from "@material-ui/core";
 import Head from "next/head";
+import Image from "next/image";
 export const getStaticPaths = async () => {
   const { data } = await client.query({ query: getBooks });
   const books = data.getBooks.Books;
@@ -110,12 +111,9 @@ const Book = ({ book }) => {
               return (
                 <div key={option.url} style={{ margin: "10px" }}>
                   <a href={option.url}>
-                    <img
-                      style={{ borderRadius: "16px" }}
-                      width="50px"
-                      height="50px"
-                      src={option.iconUrl}
-                    />
+                    <div style={{ borderRadius: "16px" }}>
+                      <Image width="50px" height="50px" src={option.iconUrl} />
+                    </div>
                   </a>
                 </div>
               );
