@@ -113,7 +113,7 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
             <Grid item xs={12}>
               <Typography variant="body1" className={styles.characterAttr}>
                 {" "}
-                {character.category.title}
+                {character.category && character.category.title}
               </Typography>
             </Grid>
           </Grid>
