@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/dist/client/router";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     HeroWrapper: {
@@ -83,6 +84,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 export default function Hero() {
+  const Router = useRouter();
   const styles = useStyles();
   return (
     <div className={styles.HeroWrapper}>
@@ -94,7 +96,7 @@ export default function Hero() {
                 <Image
                   width="270px"
                   height="290px"
-                  src="./assets/evil-sm.png"
+                  src="/assets/evil-sm.png"
                   alt="Lord banrek"
                 />
               </div>
@@ -117,11 +119,14 @@ export default function Hero() {
                   <Image
                     width="20px"
                     height="20px"
-                    src="./assets/Digital-Patreon-Logo_Black.png"
+                    src="/assets/Digital-Patreon-Logo_Black.png"
                   />
                 }
                 className={styles.patreonCTA}
                 variant="contained"
+                onClick={() =>
+                  Router.push("https://patreon.com/ygGarciaAuthor")
+                }
               >
                 Support my patreon?
               </Button>
