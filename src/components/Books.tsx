@@ -8,7 +8,7 @@ const Books = (props: BooksProps) => {
   return (
     <Grid style={{ padding: "10px", marginTop: "80px" }} container spacing={4}>
       {props.books.map((book: any) => {
-        return <Book book={book} />;
+        return <Book key={book.id} book={book} />;
       })}
     </Grid>
   );

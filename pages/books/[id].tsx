@@ -11,7 +11,6 @@ export const getStaticPaths = async () => {
   const books = data.getBooks.Books;
   const paths = books.map((book) => {
     return {
-      ket: book.id,
       params: { id: book.id },
     };
   });
@@ -80,11 +79,18 @@ const Book = ({ book }) => {
           maxWidth: "300px",
         }}
       >
-        {book.genres.split(",").map((genre) => {
-          return (
-            <Chip style={{ margin: "0 5px" }} color="primary" label={genre} />
-          );
-        })}
+        {book.genres &&
+          book.genres.includes(",") &&
+          book.genres.split(",").map((genre) => {
+            return (
+              <Chip
+                key={genre}
+                style={{ margin: "0 5px" }}
+                color="primary"
+                label={genre}
+              />
+            );
+          })}
       </Box>
       <Typography
         style={{

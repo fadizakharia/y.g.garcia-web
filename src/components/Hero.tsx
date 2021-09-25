@@ -119,6 +119,7 @@ export default function Hero() {
                   <Image
                     width="20px"
                     height="20px"
+                    alt="Patreon Logo"
                     src="/assets/Digital-Patreon-Logo_Black.png"
                   />
                 }
