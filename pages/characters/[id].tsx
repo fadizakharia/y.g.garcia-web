@@ -35,7 +35,7 @@ const Character = ({ character }) => {
   return (
     <div>
       <Head>
-        <title>YGGARCIA | {character.name}</title>
+        <title>Y.G. GARCIA | {character.name}</title>
         <meta
           name="description"
           content={character.bio.substr(0, 150) + "..."}

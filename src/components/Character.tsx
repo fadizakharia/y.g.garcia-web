@@ -40,9 +40,16 @@ const Character: React.FC<CharacterGridCharacterProps> = (props) => {
               : "https://plchldr.co/i/500x250?text=Coming%20Soon"
           }
         />
-        <CardHeader title={props.character.name}></CardHeader>
+        <CardHeader
+          style={{ wordWrap: "break-word" }}
+          title={props.character.name}
+        ></CardHeader>
         <CardContent>
-          <Typography>
+          <Typography
+            style={{ wordWrap: "break-word" }}
+            variant="body2"
+            component="p"
+          >
             {props.character.bio
               ? props.character.bio.substring(0, 50) + "..."
               : "character has no biography"}

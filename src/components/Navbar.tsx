@@ -40,7 +40,7 @@ export default function Navbar() {
     <AppBar className={styles.root}>
       <Toolbar className={styles.toolBar}>
         <div className={styles.logoContainer}>
-          <Link href="/">
+          <Link href="/" passHref>
             <div className={styles.logo}>
               <Image
                 width="60px"

@@ -111,7 +111,7 @@ export default function Hero() {
             </Typography>
             <Typography align="center" color="secondary" variant="body1">
               I am the debut author behind the upcoming scifi/fantasy novel
-              &quot;the jewel of her desire&quot;
+              &quot;The Jewel of Her Desire&quot;
             </Typography>
             <div className={styles.patreonCTAContainer}>
               <Button

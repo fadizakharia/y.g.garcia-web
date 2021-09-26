@@ -94,14 +94,14 @@ export default function NavLink(props: props) {
   const styles = useStyles();
 
   return props.variant === "desktop" ? (
-    <Link href={props.link}>
+    <Link href={props.link} passHref>
       <Typography className={styles.linkDesktop} variant="subtitle1">
         {!props.title ? props.link.split("/")[1] : props.title}
       </Typography>
     </Link>
   ) : (
     <ListItem button className={styles.listItem}>
-      <Link href={props.link}>
+      <Link href={props.link} passHref>
         <ListItemText>
           <Typography className={styles.linkMobile} variant="h6">
             {!props.title ? props.link.split("/")[1] : props.title}

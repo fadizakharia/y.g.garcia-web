@@ -48,7 +48,10 @@ const Book: React.FC<BookProps> = (props) => {
               : "https://plchldr.co/i/500x250?text=Coming%20Soon"
           }
         />
-        <CardHeader title={props.book.title} />
+        <CardHeader
+          style={{ wordWrap: "break-word" }}
+          title={props.book.title}
+        />
 
         <Typography variant="caption">
           {getBookStatus(props.book.status)}
@@ -56,7 +59,7 @@ const Book: React.FC<BookProps> = (props) => {
         <CardContent>
           <Typography variant="caption">genres: {props.book.genres}</Typography>
           <Typography variant="body1">
-            {props.book.body.substr(0, 500)}...
+            {props.book.body.substr(0, 150)}...
           </Typography>
         </CardContent>
 

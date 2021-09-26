@@ -1,18 +1,16 @@
 import {
-  Box,
   createStyles,
   Divider,
-  Grid,
-  IconButton,
   Paper,
   Theme,
   Typography,
 } from "@material-ui/core";
-// import { Head, Main } from "next/document";
+import SocialMediaIcons from "../src/components/SocialMediaIcons";
+import Head from "next/head";
 import { makeStyles } from "@material-ui/core";
 import React from "react";
 import Hero from "../src/components/Hero";
-import { Facebook, Instagram, YouTube } from "@material-ui/icons";
+
 import MailChimp from "../src/components/MailChimp";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -49,6 +47,15 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 export default function Index() {
+  <Head>
+    <title>Y.G. Garcia</title>
+    <meta
+      name="description"
+      content={
+        "Y.G. García is a debut author trailblazing in the novelization of the Japanese Tokusatsu Genre. His first novel The Jewel of Her Desire, sets the pace for a long series of books told using beloved sentai tropes."
+      }
+    />
+  </Head>;
   const styles = useStyles();
   return (
     <div className={styles.root}>
@@ -61,34 +68,9 @@ export default function Index() {
         square
       >
         <Typography align="center" variant="body1">
-          in order to be up to date with the latest news concerning the novel
-          you can follow us on:
+          Stay up to date on the novel by following us on social media:
         </Typography>
-        <Grid container>
-          <Grid item xs={3}></Grid>
-          <Grid item xs={2}>
-            <Box textAlign="center">
-              <IconButton>
-                <Facebook />
-              </IconButton>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box textAlign="center">
-              <IconButton>
-                <Instagram />
-              </IconButton>
-            </Box>
-          </Grid>
-          <Grid item xs={2}>
-            <Box textAlign="center">
-              <IconButton>
-                <YouTube />
-              </IconButton>
-            </Box>
-          </Grid>
-          <Grid item xs={3}></Grid>
-        </Grid>
+        <SocialMediaIcons />
         <Divider style={{ margin: "20px 0" }} />
         <MailChimp />
       </Paper>

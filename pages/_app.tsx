@@ -25,6 +25,7 @@ export default function MyApp(props) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+
         <link rel="stylesheet" href="/fonts/porcelain/style.css" />
         <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css" />
       </Head>

@@ -36,7 +36,7 @@ const Book = ({ book }) => {
   return (
     <div style={{ margin: "64px 0 60px 0" }}>
       <Head>
-        <title>YGGARCIA | {book.title}</title>
+        <title>Y.G. GARCIA | {book.title}</title>
         <meta name="description" content={book.body.substr(0, 150) + "..."} />
       </Head>
       <SlideShow images={book.images} />
@@ -119,7 +119,12 @@ const Book = ({ book }) => {
                 <div key={option.url} style={{ margin: "10px" }}>
                   <a href={option.url}>
                     <div style={{ borderRadius: "16px" }}>
-                      <Image width="50px" height="50px" src={option.iconUrl} />
+                      <Image
+                        alt={option.url}
+                        width="50px"
+                        height="50px"
+                        src={option.iconUrl}
+                      />
                     </div>
                   </a>
                 </div>

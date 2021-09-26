@@ -22,7 +22,7 @@ export async function getServerSideProps({ query: { page = 1 } }) {
 
 const Character = ({ characters, page, total }) => {
   <Head>
-    <title>YGGARCIA | Characters</title>
+    <title>Y.G. GARCIA | Characters</title>
     <meta
       name="description"
       content={

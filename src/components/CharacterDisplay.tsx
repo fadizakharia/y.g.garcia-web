@@ -51,6 +51,7 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
               textDecoration: "underline",
               textTransform: "uppercase",
               marginTop: "15px",
+              wordWrap: "break-word",
             }}
             variant="h3"
           >
@@ -67,7 +68,6 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
             </Grid>
             <Grid item xs={12}>
               <Typography variant="body1" className={styles.characterAttr}>
-                {" "}
                 {character.gender}
               </Typography>
             </Grid>
@@ -82,7 +82,6 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
             </Grid>
             <Grid item xs={12}>
               <Typography variant="body1" className={styles.characterAttr}>
-                {" "}
                 {character.ethnicity}
               </Typography>
             </Grid>
@@ -97,7 +96,6 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
             </Grid>
             <Grid item xs={12}>
               <Typography variant="body1" className={styles.characterAttr}>
-                {" "}
                 {character.date_of_birth}
               </Typography>
             </Grid>
@@ -111,15 +109,20 @@ const CharacterDisplay: React.FC<props> = ({ character }) => {
               </Typography>
             </Grid>
             <Grid item xs={12}>
-              <Typography variant="body1" className={styles.characterAttr}>
-                {" "}
-                {character.category && character.category.title}
+              <Typography
+                style={{ wordWrap: "break-word" }}
+                variant="body1"
+                className={styles.characterAttr}
+              >
+                {character.category ? character.category.title : "no category"}
               </Typography>
             </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="body1">{character.bio}</Typography>
+          <Typography style={{ wordWrap: "break-word" }} variant="body1">
+            {character.bio}
+          </Typography>
         </Grid>
       </Grid>
     </div>
