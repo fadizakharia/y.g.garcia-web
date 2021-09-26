@@ -6,7 +6,6 @@ import {
   Typography,
 } from "@material-ui/core";
 import SocialMediaIcons from "../src/components/SocialMediaIcons";
-import Head from "next/head";
 import { makeStyles } from "@material-ui/core";
 import React from "react";
 import Hero from "../src/components/Hero";
