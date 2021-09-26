@@ -47,15 +47,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 export default function Index() {
-  <Head>
-    <title>Y.G. Garcia</title>
-    <meta
-      name="description"
-      content={
-        "Y.G. García is a debut author trailblazing in the novelization of the Japanese Tokusatsu Genre. His first novel The Jewel of Her Desire, sets the pace for a long series of books told using beloved sentai tropes."
-      }
-    />
-  </Head>;
   const styles = useStyles();
   return (
     <div className={styles.root}>

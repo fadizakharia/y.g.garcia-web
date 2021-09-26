@@ -30,7 +30,7 @@ const Character: React.FC<CharacterGridCharacterProps> = (props) => {
   const styles = useStyles();
 
   return props.character ? (
-    <Grid item xs={6} sm={4} md={3}>
+    <Grid item xs={12} sm={6} md={4}>
       <Card>
         <CardMedia
           className={styles.media}

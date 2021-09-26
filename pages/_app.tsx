@@ -20,7 +20,13 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <title>My page</title>
+        <title>Y.G. Garcia</title>
+        <meta
+          name="description"
+          content={
+            "Y.G. García is a debut author trailblazing in the novelization of the Japanese Tokusatsu Genre. His first novel The Jewel of Her Desire, sets the pace for a long series of books told using beloved sentai tropes."
+          }
+        />
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
