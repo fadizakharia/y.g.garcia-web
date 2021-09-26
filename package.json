@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild":"next-sitemap"
   },
   "dependencies": {
     "@apollo/client": "^3.4.12",
@@ -41,6 +42,7 @@
     "babel-plugin-styled-components": "^1.13.2",
     "eslint": "7.30.0",
     "eslint-config-next": "11.0.1",
+    "next-sitemap": "^1.6.168",
     "typescript": "4.3.5"
   }
 }
