@@ -3,7 +3,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 import SimpleForm from "./SimpleForm";
 
 const MailChimp = () => {
-  const MailChimpLink = `https://${process.env.MAIL_CHIMP_URL}/subscribe/post?u=${process.env.MAIL_CHIMP_USER}&amp;id=${process.env.MAIL_CHIMP_ID}`;
+  const MailChimpLink = `https://${process.env.NEXT_PUBLIC_MAIL_CHIMP_URL}/subscribe/post?u=${process.env.NEXT_PUBLIC_MAIL_CHIMP_USER}&amp;id=${process.env.NEXT_PUBLIC_MAIL_CHIMP_ID}`;
   return (
     <MailchimpSubscribe
       url={MailChimpLink}
