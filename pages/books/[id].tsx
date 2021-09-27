@@ -80,7 +80,7 @@ const Book = ({ book }) => {
         }}
       >
         <Grid container spacing={2}>
-          <Grid xs={3}>
+          <Grid item xs={4}>
             {book.genres &&
               book.genres.includes(",") &&
               book.genres.split(",").map((genre) => {
