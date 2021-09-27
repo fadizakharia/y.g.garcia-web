@@ -76,7 +76,7 @@ const Book = ({ book }) => {
       <Box
         style={{
           margin: "10px auto",
-          maxWidth: "300px",
+          maxWidth: "500px",
         }}
       >
         <Grid container spacing={2}>
@@ -84,9 +84,9 @@ const Book = ({ book }) => {
             book.genres.includes(",") &&
             book.genres.split(",").map((genre) => {
               return (
-                <Grid key={genre} item xs={4}>
+                <Grid key={genre} item xs={"auto"}>
                   <Chip
-                    style={{ margin: "0 5px", width: "100%" }}
+                    style={{ margin: "0 5px" }}
                     color="primary"
                     label={genre}
                   />
