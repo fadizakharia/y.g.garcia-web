@@ -18,6 +18,7 @@ import NavLink from "./NavLink";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     desktopContainer: {
+      width: "100%",
       [theme.breakpoints.down("sm")]: {
         display: "none",
       },

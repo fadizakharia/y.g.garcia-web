@@ -3,7 +3,7 @@ import { createStyles, makeStyles, Theme, Typography } from "@material-ui/core";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      margin: "84px 0",
+      margin: "168px 0 200px 0",
       height: "100%",
       width: "100%",
     },
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginBottom: "20px",
     },
     bodyBio: {
-      maxWidth: "700px",
+      maxWidth: "75%",
       margin: "auto auto",
     },
   })

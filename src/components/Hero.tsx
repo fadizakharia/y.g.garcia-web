@@ -11,16 +11,9 @@ import Image from "next/image";
 import { useRouter } from "next/dist/client/router";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    HeroWrapper: {
-      backgroundColor: "white",
-      borderBottom: "rgba(255, 255, 255, 0.05) 2px solid",
-      position: "relative",
-      zIndex: 0,
-    },
     Hero: {
       marginTop: "74px",
-      height: "80vh",
-      maxHeight: "100vh",
+      height: "100%",
       background:
         "radial-gradient(circle, rgba(57,134,71,1) 5%, rgba(34,48,51,1) 45%, rgba(34,64,51,1) 100%)",
       [theme.breakpoints.down("md")]: {
@@ -49,10 +42,10 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "absolute",
         minWidth: "270px",
         bottom: "0",
-        boxShadow: '"0px -101px 44px -4px rgba(0,0,0,0.69)"',
-        borderBottom: `5px solid ${theme.palette.primary.dark}`,
+
+        borderBottom: `5px solid ${theme.palette.primary.main}`,
       },
-      margin: "5vh auto 30px auto",
+      margin: "30px auto",
     },
     heroImage: {
       overflow: "hidden",
@@ -61,16 +54,9 @@ const useStyles = makeStyles((theme: Theme) =>
     heroBackgroundOverlay: {
       position: "absolute",
       zIndex: -1,
-      width: "90vh",
-      height: "calc(100vh - 74px)",
-      top: "85%",
-      transform: "translate(-52%,-50%)",
-      left: "51%",
-      [theme.breakpoints.down("sm")]: {
-        top: "92%",
-        width: "80vh",
-        height: "90vh",
-      },
+      width: "100%",
+      height: "100%",
+      transform: "translate(-50%,-50%)",
     },
     patreonCTA: {
       backgroundColor: "#F3AA0D",
@@ -78,8 +64,7 @@ const useStyles = makeStyles((theme: Theme) =>
     patreonCTAContainer: {
       width: "100%",
       textAlign: "center",
-
-      marginTop: "7vh",
+      marginTop: "2rem",
     },
   })
 );
@@ -87,54 +72,50 @@ export default function Hero() {
   const Router = useRouter();
   const styles = useStyles();
   return (
-    <div className={styles.HeroWrapper}>
-      <div className={styles.Hero}>
-        <Grid container>
-          <Grid item xs={12}>
-            <div className={styles.heroImageContainer}>
-              <div className={styles.heroImage}>
+    <div className={styles.Hero}>
+      <Grid container>
+        <Grid item xs={12}>
+          <div className={styles.heroImageContainer}>
+            <div className={styles.heroImage}>
+              <Image
+                width="270px"
+                height="290px"
+                src="/assets/evil-sm.png"
+                alt="Lord banrek"
+              />
+            </div>
+          </div>
+          <Typography
+            className={styles.title}
+            align="center"
+            color="secondary"
+            variant="h3"
+          >
+            Hi, I&apos;m Y.G Garcia
+          </Typography>
+          <Typography align="center" color="secondary" variant="body1">
+            I am the debut author behind the upcoming scifi/fantasy novel
+            &quot;The Jewel of Her Desire&quot;
+          </Typography>
+          <div className={styles.patreonCTAContainer}>
+            <Button
+              startIcon={
                 <Image
-                  width="270px"
-                  height="290px"
-                  src="/assets/evil-sm.png"
-                  alt="Lord banrek"
+                  width="20px"
+                  height="20px"
+                  alt="Patreon Logo"
+                  src="/assets/Digital-Patreon-Logo_Black.png"
                 />
-              </div>
-            </div>
-            <Typography
-              className={styles.title}
-              align="center"
-              color="secondary"
-              variant="h3"
+              }
+              className={styles.patreonCTA}
+              variant="contained"
+              onClick={() => Router.push("https://patreon.com/ygGarciaAuthor")}
             >
-              Hi, I&apos;m Y.G Garcia
-            </Typography>
-            <Typography align="center" color="secondary" variant="body1">
-              I am the debut author behind the upcoming scifi/fantasy novel
-              &quot;The Jewel of Her Desire&quot;
-            </Typography>
-            <div className={styles.patreonCTAContainer}>
-              <Button
-                startIcon={
-                  <Image
-                    width="20px"
-                    height="20px"
-                    alt="Patreon Logo"
-                    src="/assets/Digital-Patreon-Logo_Black.png"
-                  />
-                }
-                className={styles.patreonCTA}
-                variant="contained"
-                onClick={() =>
-                  Router.push("https://patreon.com/ygGarciaAuthor")
-                }
-              >
-                Support my patreon?
-              </Button>
-            </div>
-          </Grid>
+              Support my patreon?
+            </Button>
+          </div>
         </Grid>
-      </div>
+      </Grid>
     </div>
   );
 }
