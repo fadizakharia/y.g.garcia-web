@@ -84,9 +84,8 @@ const Book = ({ book }) => {
             book.genres.includes(",") &&
             book.genres.split(",").map((genre) => {
               return (
-                <Grid item xs={4}>
+                <Grid key={genre} item xs={4}>
                   <Chip
-                    key={genre}
                     style={{ margin: "0 5px" }}
                     color="primary"
                     label={genre}
