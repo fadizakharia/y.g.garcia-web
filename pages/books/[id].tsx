@@ -86,7 +86,7 @@ const Book = ({ book }) => {
               return (
                 <Grid key={genre} item xs={4}>
                   <Chip
-                    style={{ margin: "0 5px" }}
+                    style={{ margin: "0 5px", width: "100%" }}
                     color="primary"
                     label={genre}
                   />
