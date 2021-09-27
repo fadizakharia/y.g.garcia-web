@@ -1,24 +1,18 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-
+import Image from "next/image";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       backgroundColor: theme.palette.primary.main,
     },
-    media: {
-      backgroundSize: "auto 100%",
-      backgroundRepeat: "no-repeat",
-      backgroundPosition: "center center",
-      width: "100vw",
-      height: "50vh",
-
-      transform: "translate(-2%)",
-      [theme.breakpoints.down("xs")]: {
-        transform: "translate(0)",
-        backgroundSize: "100% 100%",
-      },
+    mediaWrapper: {},
+    mediaContainer: {
+      maxHeight: "720px",
+      maxWidth: "1280px",
+      margin: "0 auto",
+      objectFit: "scale-down",
     },
   })
 );
@@ -34,11 +28,16 @@ const SlideShow: React.FC<SlideShowProps> = ({ images }) => {
       <Carousel>
         {images.map((image) => {
           return (
-            <div key={image.key}>
-              <div
-                style={{ backgroundImage: `url(${image.imageUrl})` }}
-                className={styles.media}
-              ></div>
+            <div className={styles.mediaContainer}>
+              <Image
+                width="640px"
+                height="360px"
+                layout="responsive"
+                loader={function () {
+                  return image.imageUrl;
+                }}
+                src={image.imageUrl}
+              />
             </div>
           );
         })}

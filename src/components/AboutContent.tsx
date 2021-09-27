@@ -4,7 +4,8 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       margin: "84px 0",
-      height: "calc(100vh - 209px)",
+      height: "100%",
+      width: "100%",
     },
     bodyWrapper: {
       textAlign: "center",
@@ -26,10 +27,10 @@ const AboutContent = () => {
   return (
     <div className={styles.root}>
       <div className={styles.bodyWrapper}>
-        <Typography className={styles.bodyHeader} variant="h1">
+        <Typography className={styles.bodyHeader} variant="h2">
           About the author:
         </Typography>
-        <Typography className={styles.bodyBio} variant="h4">
+        <Typography className={styles.bodyBio} variant="body1">
           Y.G. García is a debut novelist with a passion for languages and pop
           culture. Hailing from the mountains of Puerto Rico, Y.G.’s Island
           fever drove him to learn a total of six languages once he relocated to
