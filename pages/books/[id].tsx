@@ -80,20 +80,20 @@ const Book = ({ book }) => {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={4}>
-            {book.genres &&
-              book.genres.includes(",") &&
-              book.genres.split(",").map((genre) => {
-                return (
+          {book.genres &&
+            book.genres.includes(",") &&
+            book.genres.split(",").map((genre) => {
+              return (
+                <Grid item xs={4}>
                   <Chip
                     key={genre}
                     style={{ margin: "0 5px" }}
                     color="primary"
                     label={genre}
                   />
-                );
-              })}
-          </Grid>
+                </Grid>
+              );
+            })}
         </Grid>
       </Box>
       <Typography
