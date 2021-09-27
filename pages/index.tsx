@@ -22,7 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
 
     HousePaper: {
-      width: "100%",
       margin: "50px auto 57px auto",
       padding: "10px",
 
