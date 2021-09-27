@@ -3,7 +3,7 @@ import client from "../../src/utils/apollo";
 import { getBookQuery, getBooks } from "../api/gql/queries";
 import "react-slideshow-image/dist/styles.css";
 import SlideShow from "../../src/components/SlideShow";
-import { Box, Chip, Divider, Typography } from "@material-ui/core";
+import { Box, Chip, Divider, Grid, Typography } from "@material-ui/core";
 import Head from "next/head";
 import Image from "next/image";
 export const getStaticPaths = async () => {
@@ -79,18 +79,22 @@ const Book = ({ book }) => {
           maxWidth: "300px",
         }}
       >
-        {book.genres &&
-          book.genres.includes(",") &&
-          book.genres.split(",").map((genre) => {
-            return (
-              <Chip
-                key={genre}
-                style={{ margin: "0 5px" }}
-                color="primary"
-                label={genre}
-              />
-            );
-          })}
+        <Grid container>
+          <Grid xs={3}>
+            {book.genres &&
+              book.genres.includes(",") &&
+              book.genres.split(",").map((genre) => {
+                return (
+                  <Chip
+                    key={genre}
+                    style={{ margin: "0 5px" }}
+                    color="primary"
+                    label={genre}
+                  />
+                );
+              })}
+          </Grid>
+        </Grid>
       </Box>
       <Typography
         style={{
