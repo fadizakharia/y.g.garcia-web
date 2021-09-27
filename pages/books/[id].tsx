@@ -79,7 +79,7 @@ const Book = ({ book }) => {
           maxWidth: "300px",
         }}
       >
-        <Grid container>
+        <Grid container spacing={2}>
           <Grid xs={3}>
             {book.genres &&
               book.genres.includes(",") &&
