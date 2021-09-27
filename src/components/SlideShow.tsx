@@ -28,7 +28,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ images }) => {
       <Carousel>
         {images.map((image) => {
           return (
-            <div className={styles.mediaContainer}>
+            <div key={image.key} className={styles.mediaContainer}>
               <Image
                 width="640px"
                 height="360px"
