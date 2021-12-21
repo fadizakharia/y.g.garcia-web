@@ -28,7 +28,7 @@ const BlogList: React.FC<IBlogList> = ({ postsArr }) => {
       {posts &&
         posts.map((post) => {
           return (
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid key={post.id} item xs={12} sm={6} md={4}>
               <Container>
                 <BlogPost post={post} />
               </Container>
