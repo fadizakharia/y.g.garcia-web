@@ -17,7 +17,7 @@ interface IBlogList {
   }>;
 }
 const BlogList: React.FC<IBlogList> = ({ postsArr }) => {
-  const [posts, setPosts] = useState<any>();
+  const [posts, setPosts] = useState<typeof postsArr>();
   useEffect(() => {
     setPosts(postsArr);
     return () => {};
@@ -26,7 +26,7 @@ const BlogList: React.FC<IBlogList> = ({ postsArr }) => {
   return (
     <Grid style={{ margin: 0, width: "100%" }} container spacing={2}>
       {posts &&
-        posts.map((post: any) => {
+        posts.map((post) => {
           return (
             <Grid key={post.id} item xs={12} sm={6} md={4}>
               <Container>
