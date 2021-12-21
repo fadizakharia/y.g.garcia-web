@@ -3,7 +3,7 @@ export const links = [
   "news",
   "books",
   "characters",
-  "blog",
+
   "about",
   "affiliates",
 ];

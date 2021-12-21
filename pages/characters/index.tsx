@@ -1,8 +1,8 @@
+import Head from "next/head";
+import React from "react";
+import Characters from "../../src/components/Characters";
 import client from "../../src/utils/apollo";
 import { getCharactersQuery } from "../api/gql/queries";
-import Characters from "../../src/components/Characters";
-import React from "react";
-import Head from "next/head";
 export async function getServerSideProps({ query: { page = 1 } }) {
   const { data } = await client.query({
     query: getCharactersQuery,

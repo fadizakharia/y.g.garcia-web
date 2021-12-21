@@ -1,7 +1,7 @@
 import { createStyles, makeStyles, Theme } from "@material-ui/core";
+import Image from "next/image";
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import Image from "next/image";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {

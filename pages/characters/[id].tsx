@@ -1,8 +1,8 @@
-import React from "react";
-import client from "../../src/utils/apollo";
-import CharacterDisplay from "../../src/components/CharacterDisplay";
-import { getAllCharactersQuery, getCharacterQuery } from "../api/gql/queries";
 import Head from "next/head";
+import React from "react";
+import CharacterDisplay from "../../src/components/CharacterDisplay";
+import client from "../../src/utils/apollo";
+import { getAllCharactersQuery, getCharacterQuery } from "../api/gql/queries";
 export const getStaticPaths = async () => {
   const { data } = await client.query({
     query: getAllCharactersQuery,

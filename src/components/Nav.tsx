@@ -1,20 +1,17 @@
-import React, { useState } from "react";
-import Link from "next/link";
 import {
   createStyles,
   Divider,
   Drawer,
   IconButton,
   List,
-  ListItem,
   makeStyles,
   Theme,
-  Typography,
 } from "@material-ui/core";
-
 import { Menu as Hamburger } from "@material-ui/icons";
+import React, { useState } from "react";
 import { links } from "../utils/links";
 import NavLink from "./NavLink";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     desktopContainer: {
@@ -57,6 +54,12 @@ export default function Nav() {
           link={"https://www.customink.com/fundraising/yggarciaauthor"}
           title="Merch"
         />
+        <NavLink
+          key={"blog" + "d"}
+          variant="desktop"
+          link={"https://blog.yggarcia.com/"}
+          title="Blog"
+        />
       </div>
       <div className={styles.mobileContainer}>
         <div className={styles.flex}></div>
@@ -86,10 +89,10 @@ export default function Nav() {
               );
             })}
             <NavLink
-              key={"merch" + "m"}
+              key={"blog" + "m"}
               variant="mobile"
-              link={"https://www.customink.com/fundraising/yggarciaauthor"}
-              title="Merch"
+              link={"https://blog.yggarcia.com/"}
+              title="Blog"
             />
           </List>
         </Drawer>

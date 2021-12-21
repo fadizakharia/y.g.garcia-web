@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "lint": "next lint",
-    "postbuild":"next-sitemap"
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@apollo/client": "^3.4.12",
@@ -18,9 +18,11 @@
     "@material-ui/lab": "^4.0.0-alpha.60",
     "apollo-boost": "^0.4.9",
     "apollo-link-context": "^1.0.20",
+    "axios": "^0.24.0",
     "cookie": "^0.4.1",
     "css-loader": "^6.3.0",
     "graphql": "^15.5.3",
+    "html-to-text": "^8.1.0",
     "isomorphic-unfetch": "^3.1.0",
     "less-loader": "^10.0.1",
     "moment": "^2.29.1",
@@ -36,6 +38,7 @@
   },
   "devDependencies": {
     "@types/cookie": "^0.4.1",
+    "@types/html-to-text": "^8.0.1",
     "@types/node": "^16.9.3",
     "@types/react": "17.0.14",
     "@types/react-mailchimp-subscribe": "^2.1.1",

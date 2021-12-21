@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Head from "next/head";
-import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import theme from "../styles/standardtheme";
+import { ThemeProvider } from "@material-ui/core/styles";
+import Head from "next/head";
+import PropTypes from "prop-types";
+import React from "react";
 import Layout from "../src/components/Layout";
+import theme from "../styles/standardtheme";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;

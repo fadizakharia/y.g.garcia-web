@@ -6,9 +6,8 @@ import {
   Theme,
   Typography,
 } from "@material-ui/core";
-import React, { useRef } from "react";
-
 import { createStyles, makeStyles } from "@material-ui/styles";
+import React, { useRef } from "react";
 
 // a basic form
 const useStyles = makeStyles((theme: Theme) =>

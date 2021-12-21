@@ -1,7 +1,7 @@
-import React from "react";
+import { Box, Grid, IconButton } from "@material-ui/core";
 import { Facebook, Instagram, Twitter } from "@material-ui/icons";
-import { Grid, IconButton, Box } from "@material-ui/core";
 import { useRouter } from "next/dist/client/router";
+import React from "react";
 const SocialMediaIcons = () => {
   const router = useRouter();
   const handleSocialReroute = (url: string) => {

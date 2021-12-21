@@ -5,9 +5,9 @@ import {
   Theme,
   Toolbar,
 } from "@material-ui/core";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import Nav from "./Nav";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

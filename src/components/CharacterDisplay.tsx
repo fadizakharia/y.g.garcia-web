@@ -7,7 +7,6 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import SlideShow from "./SlideShow";
-import moment from "moment";
 interface props {
   character: any;
 }
