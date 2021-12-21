@@ -75,7 +75,6 @@ export async function getServerSideProps() {
 
 export default function Index(props) {
   const styles = useStyles();
-  console.log(props.featuredPosts);
 
   return (
     <React.Fragment>

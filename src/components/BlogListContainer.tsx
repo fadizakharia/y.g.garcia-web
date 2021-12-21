@@ -34,7 +34,6 @@ const BlogListContainer: React.FC<IBlogListContainer> = ({
   const [postsMerged, setPostsMerged] = useState<Array<typeof posts>>([]);
 
   const [pageIndex, setPageIndex] = useState<number>(0);
-  console.log(postsMerged.length);
 
   useEffect(() => {
     setPostsMerged(getMergedArray(posts, nbOfElementsPerPage));
