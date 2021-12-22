@@ -1,10 +1,10 @@
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
-import Head from "next/head";
-import PropTypes from "prop-types";
 import React from "react";
-import Layout from "../src/components/Layout";
+import PropTypes from "prop-types";
+import Head from "next/head";
+import { ThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../styles/standardtheme";
+import Layout from "../src/components/Layout";
 
 export default function MyApp(props) {
   const { Component, pageProps } = props;
@@ -33,6 +33,7 @@ export default function MyApp(props) {
         />
 
         <link rel="stylesheet" href="/fonts/porcelain/style.css" />
+
         <link rel="stylesheet" href="/fonts/Roboto/stylesheet.css" />
       </Head>
       <ThemeProvider theme={theme}>

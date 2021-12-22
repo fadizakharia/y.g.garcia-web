@@ -36,6 +36,7 @@ const SlideShow: React.FC<SlideShowProps> = ({ images }) => {
                 loader={function () {
                   return image.imageUrl;
                 }}
+                alt={image.key}
                 src={image.imageUrl}
               />
             </div>

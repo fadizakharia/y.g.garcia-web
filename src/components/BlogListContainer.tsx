@@ -38,7 +38,7 @@ const BlogListContainer: React.FC<IBlogListContainer> = ({
   useEffect(() => {
     setPostsMerged(getMergedArray(posts, nbOfElementsPerPage));
     return () => {};
-  }, []);
+  }, [posts, nbOfElementsPerPage]);
   const handleArrowPrevious = () => {
     setPageIndex((prev) => {
       if (prev > 0) {

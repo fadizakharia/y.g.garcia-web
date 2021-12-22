@@ -21,7 +21,7 @@ const BlogList: React.FC<IBlogList> = ({ postsArr }) => {
   useEffect(() => {
     setPosts(postsArr);
     return () => {};
-  }, [JSON.stringify(postsArr)]);
+  }, [postsArr]);
 
   return (
     <Grid style={{ margin: 0, width: "100%" }} container spacing={2}>

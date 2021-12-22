@@ -36,7 +36,7 @@ const BlogPost: React.FC<IBlogPost> = ({ post }) => {
         </Typography>
 
         <CardActions style={{ marginTop: "20px", justifyContent: "end" }}>
-          <Link href={post.link}>
+          <Link href={post.link} passHref>
             <Button color="primary" variant="text">
               Read More
             </Button>
