@@ -9,8 +9,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     mediaWrapper: {},
     mediaContainer: {
-      maxHeight: "720px",
-      maxWidth: "1280px",
+      minHeight: "720px",
+      minWidth: "1280px",
       margin: "0 auto",
       objectFit: "scale-down",
     },
@@ -30,14 +30,17 @@ const SlideShow: React.FC<SlideShowProps> = ({ images }) => {
           return (
             <div key={image.key} className={styles.mediaContainer}>
               <Image
-                width="640px"
-                height="360px"
-                layout="responsive"
+                layout="fill"
+                objectFit="contain"
                 loader={function () {
-                  return image.imageUrl;
+                  if (image.imageUrl) {
+                    return image.imageUrl;
+                  } else {
+                    return image.src;
+                  }
                 }}
                 alt={image.key}
-                src={image.imageUrl}
+                src={image.imageUrl ? image.imageUrl : image.src}
               />
             </div>
           );

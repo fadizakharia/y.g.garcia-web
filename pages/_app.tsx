@@ -5,7 +5,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../styles/standardtheme";
 import Layout from "../src/components/Layout";
-
+import { ShopifyProvider } from "../src/utils/ShopifyCartContext";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
@@ -40,7 +40,9 @@ export default function MyApp(props) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <Layout>
-          <Component {...pageProps} />
+          <ShopifyProvider>
+            <Component {...pageProps} />
+          </ShopifyProvider>
         </Layout>
       </ThemeProvider>
     </React.Fragment>
