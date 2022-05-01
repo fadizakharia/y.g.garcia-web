@@ -51,7 +51,7 @@ export default function Nav() {
         <NavLink
           key={"merch" + "d"}
           variant="desktop"
-          link={"https://www.customink.com/fundraising/yggarciaauthor"}
+          link={"/products"}
           title="Merch"
         />
         <NavLink

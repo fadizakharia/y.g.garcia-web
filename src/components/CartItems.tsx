@@ -33,7 +33,11 @@ const CartItems = () => {
     fetchCart();
 
     return () => {};
-  }, [JSON.stringify(cart), shopifyStore.checkoutId, shopifyStore.change]);
+  }, [
+    JSON.stringify(cart),
+    shopifyStore.checkoutId,
+    JSON.stringify(shopifyStore.lineItems),
+  ]);
 
   return (
     <Container style={{ marginTop: "74px" }}>

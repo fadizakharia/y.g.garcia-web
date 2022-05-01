@@ -14,6 +14,8 @@ import React from "react";
 import { LineItem } from "shopify-buy";
 import { useShopifyProvider } from "../utils/ShopifyCartContext";
 import Client from "../utils/shopify";
+import { useLoadingProvider } from "../utils/LoadingContext";
+import { removeLineItems } from "../utils/lineItemsActions";
 interface ICartItem {
   item: any;
 }
@@ -27,13 +29,16 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 const CartItem: React.FC<ICartItem> = ({ item }) => {
   const shopifyContext = useShopifyProvider();
-
+  const loadingContext = useLoadingProvider();
   const styles = useStyles();
   const handleDeleteItem = async () => {
     const cart = await Client.checkout.fetch(shopifyContext.checkoutId);
-    shopifyContext.setChange(true);
+    loadingContext.setIsLoading(true);
+    shopifyContext.setLineItems(
+      removeLineItems(shopifyContext.lineItems, item.id)
+    );
     await Client.checkout.removeLineItems(cart.id, [item.id]);
-    shopifyContext.setChange(false);
+    loadingContext.setIsLoading(false);
   };
 
   const handleUpdateItem = () => {};

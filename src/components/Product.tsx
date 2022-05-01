@@ -16,6 +16,8 @@ import ShopifyNavbar from "./ShopifyNavbar";
 import Client from "../utils/shopify";
 import { useShopifyProvider } from "../utils/ShopifyCartContext";
 import { ShoppingBasket } from "@material-ui/icons";
+import { useLoadingProvider } from "../utils/LoadingContext";
+import { getNewAddedLineItems } from "../utils/lineItemsActions";
 interface IProduct {
   product: {
     availableForSale: true;
@@ -77,6 +79,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 const Product: React.FC<IProduct> = ({ product }) => {
+  const loadingContext = useLoadingProvider();
   const styles = useStyles();
   const [variantSelected, setVariantSelected] = useState<any>({
     id: undefined,
@@ -86,10 +89,16 @@ const Product: React.FC<IProduct> = ({ product }) => {
 
   const addToCart = async () => {
     if (variantSelected && quantity) {
-      const cart = await Client.checkout.addLineItems(
-        shopifyContext.checkoutId,
-        [{ quantity, variantId: variantSelected.id }]
+      loadingContext.setIsLoading(true);
+      await Client.checkout.addLineItems(shopifyContext.checkoutId, [
+        { quantity, variantId: variantSelected.id },
+      ]);
+      shopifyContext.setLineItems(
+        getNewAddedLineItems(shopifyContext.lineItems, {
+          lineItem: { id: variantSelected.id, quantity },
+        })
       );
+      loadingContext.setIsLoading(false);
     }
   };
   return (

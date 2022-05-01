@@ -1,13 +1,27 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import Client from "./shopify";
+export interface customLineItem {
+  lineItem: { id: string; quantity: number };
+}
+export interface customLineItems {
+  lineItems: { id: string; quantity: number }[];
+}
 const ShopifyContext = createContext<
-  | { checkoutId: any; setCheckoutId: any; change: boolean; setChange: any }
+  | {
+      checkoutId: any;
+      setCheckoutId: any;
+      lineItems: customLineItems;
+      setLineItems: any;
+    }
   | undefined
 >(undefined);
 interface IShopifyProvider {}
 export const ShopifyProvider: React.FC<IShopifyProvider> = ({ children }) => {
   const [checkoutId, setCheckoutId] = useState<any>();
-  const [change, setChange] = useState<boolean>(false);
+
+  const [lineItems, setLineItems] = useState<customLineItems>({
+    lineItems: [],
+  });
   useEffect(() => {
     const setInitialCart = async () => {
       const cart = await Client.checkout.create();
@@ -16,10 +30,18 @@ export const ShopifyProvider: React.FC<IShopifyProvider> = ({ children }) => {
         localStorage.setItem("checkoutId", cart.id as string);
       }
     };
+    const setInitialLineItems = async (checkoutId: string) => {
+      const cart = await Client.checkout.fetch(checkoutId);
+      const newLineItems = cart.lineItems.map((item) => {
+        return { id: item.id as string, quantity: item.quantity };
+      });
+      setLineItems({ lineItems: newLineItems });
+    };
     if (typeof window !== "undefined") {
       let checkoutIdLS = localStorage.getItem("checkoutId");
       if (checkoutIdLS) {
         setCheckoutId(checkoutIdLS);
+        setInitialLineItems(checkoutIdLS);
       } else {
         setInitialCart();
       }
@@ -30,8 +52,8 @@ export const ShopifyProvider: React.FC<IShopifyProvider> = ({ children }) => {
       value={{
         checkoutId,
         setCheckoutId,
-        change,
-        setChange,
+        lineItems,
+        setLineItems,
       }}
     >
       {children}

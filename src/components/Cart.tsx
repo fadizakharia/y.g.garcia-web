@@ -13,17 +13,21 @@ const Cart = () => {
   const shopifyStore = useShopifyProvider();
   useEffect(() => {
     const fetchCart = async () => {
-      const fetchedCart = await Client.checkout.fetch(shopifyStore.checkoutId);
-      let count = 0;
-      fetchedCart.lineItems.map((it) => {
-        count += it.quantity;
-      });
+      try {
+        const fetchedCart = await Client.checkout.fetch(
+          shopifyStore.checkoutId
+        );
+        let count = 0;
+        fetchedCart.lineItems.map((it) => {
+          count += it.quantity;
+        });
 
-      setNbItemsInCart(count);
-      setCart(fetchedCart);
+        setNbItemsInCart(count);
+        setCart(fetchedCart);
+      } catch (err) {}
     };
     fetchCart();
-  }, [shopifyStore.checkoutId]);
+  }, [shopifyStore.checkoutId, JSON.stringify(shopifyStore.lineItems)]);
 
   return (
     <React.Fragment>
