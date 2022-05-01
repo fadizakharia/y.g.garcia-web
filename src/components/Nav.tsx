@@ -94,6 +94,12 @@ export default function Nav() {
               link={"https://blog.yggarcia.com/"}
               title="Blog"
             />
+            <NavLink
+              key={"merch" + "m"}
+              variant="mobile"
+              link={"/products"}
+              title="Merch"
+            />
           </List>
         </Drawer>
       </div>
