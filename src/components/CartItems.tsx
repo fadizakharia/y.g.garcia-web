@@ -45,7 +45,7 @@ const CartItems = () => {
         <React.Fragment>
           {cart.lineItems.map((item) => {
             return (
-              <React.Fragment>
+              <React.Fragment key={item.id}>
                 <CartItem item={item} />
                 <Divider />
               </React.Fragment>

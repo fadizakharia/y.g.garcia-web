@@ -29,9 +29,6 @@ export const getStaticProps = async (context) => {
   };
 };
 const index = ({ product }) => {
-  const router = useRouter();
-  const { search } = router.query;
-
   <Head>
     <title>Y.G. GARCIA | product</title>
     <meta
