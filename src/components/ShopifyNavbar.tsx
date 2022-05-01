@@ -88,7 +88,6 @@ const ShopifyNavbar: React.FC<IShopifyNavbar> = ({ mode }) => {
   ) => {
     setCurrentCollection(event.target.value as string);
   };
-  console.log(collectionArr);
 
   const handleNavigate = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>

@@ -38,12 +38,6 @@ const SimpleForm = ({
 
   let lastNameInput = useRef<HTMLInputElement>();
   const submit = () => {
-    console.log(
-      emailInput.current!.value,
-      firstNameInput.current!.value,
-      lastNameInput.current!.value
-    );
-
     return (
       emailInput &&
       emailInput.current!.value.indexOf("@") > -1 &&

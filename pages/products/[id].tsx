@@ -19,7 +19,6 @@ export const getStaticPaths = async () => {
 };
 export const getStaticProps = async (context) => {
   const { id } = context.params;
-  console.log(id);
 
   let data = await Client.product.fetch(id);
   data = JSON.parse(JSON.stringify(data));
@@ -32,7 +31,6 @@ export const getStaticProps = async (context) => {
 const index = ({ product }) => {
   const router = useRouter();
   const { search } = router.query;
-  console.log(product);
 
   <Head>
     <title>Y.G. GARCIA | product</title>

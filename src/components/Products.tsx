@@ -18,8 +18,6 @@ interface IProducts {
   }[];
 }
 const Products: React.FC<IProducts> = ({ products }) => {
-  console.log(products);
-
   return (
     <Grid
       container

@@ -83,14 +83,13 @@ const Product: React.FC<IProduct> = ({ product }) => {
   });
   const [quantity, setQuantity] = useState<number>(1);
   const shopifyContext = useShopifyProvider();
-  console.log(product);
+
   const addToCart = async () => {
     if (variantSelected && quantity) {
       const cart = await Client.checkout.addLineItems(
         shopifyContext.checkoutId,
         [{ quantity, variantId: variantSelected.id }]
       );
-      console.log(cart);
     }
   };
   return (

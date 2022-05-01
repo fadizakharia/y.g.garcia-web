@@ -21,7 +21,6 @@ const CartItems = () => {
   const shopifyStore = useShopifyProvider();
   const handleCheckout = async () => {
     const cart = await Client.checkout.fetch(shopifyContext.checkoutId);
-    console.log(cart);
 
     router.push((cart as any).webUrl);
   };
