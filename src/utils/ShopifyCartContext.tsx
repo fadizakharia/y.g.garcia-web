@@ -46,7 +46,7 @@ export const ShopifyProvider: React.FC<IShopifyProvider> = ({ children }) => {
         setInitialCart();
       }
     }
-  });
+  }, [checkoutId, JSON.stringify(lineItems)]);
   return (
     <ShopifyContext.Provider
       value={{
